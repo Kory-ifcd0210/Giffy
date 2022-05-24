@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "wouter";
+import React from "react";
+import { Link } from "wouter";
+import Header from "../components/Header/Header";
 import ListOfGifs from "../components/ListOfGifs/ListOfGifs";
+import Search from "../components/Search/Search";
 import { useGifs } from "../hooks/useGifs";
 
 const POPULAR_GIFS =["Matrix","Gatos", "Rick"]
 
 export default function Home(){
-    const [keyword, setKeyword] = useState('')
-    const [path, pushLocation]= useLocation()
+    // const [keyword, setKeyword] = useState('')
+    // const [path, pushLocation]= useLocation()
     const {loading, gifs} = useGifs()
 
-    const handleSubmit = evt =>{
-        evt.preventDefault()
-        pushLocation(`/search/${keyword}`)
-    }
+    // const handleSubmit = evt =>{
+    //     evt.preventDefault()
+    //     pushLocation(`/search/${keyword}`)
+    // }
 
-    const handleChange = evt =>{
-        setKeyword(evt.target.value)
-    }
+    // const handleChange = evt =>{
+    //     setKeyword(evt.target.value)
+    // }
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type='text' value={keyword}/>
-            </form>
+            <h1>Giffy</h1>
             <h3 className="App-title">Última búsqueda</h3>
             <ListOfGifs gifs={gifs}/>
             <h3 className="App-title">Lo gifs más populares</h3>
