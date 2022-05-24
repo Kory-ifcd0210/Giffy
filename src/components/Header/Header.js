@@ -31,13 +31,13 @@ export default function Header(){
 
     return (
         <header className="gf-header">
-            <Search/>
             <Link className="link" to="/">Home</Link>
             {
                 isLogged
                 ? <button className="link" onClick={logout}> Logout</button>
                 : <Link className="link" to='/login'> Login</Link>
             }
+            <Search/>
             <Dropdown value={popularGifs} options={POPULAR_GIFS} onChange={onGifsChange} optionLabel="name" placeholder="Select a Category" />
         </header>
     )
