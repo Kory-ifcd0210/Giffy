@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 
+import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+import "primereact/resources/primereact.min.css";                  //core css
+import "primeicons/primeicons.css";             
+
 import {Route, Link} from 'wouter';
 import Home from './Views/Home';
 import SearchResults from './Views/SearchResults';

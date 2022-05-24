@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import { useLocation } from "wouter";
 
+import { InputText } from "primereact/inputtext";
+
 import './search.scss'
 
 
@@ -19,7 +21,10 @@ export default function Search (){
 
     return (
         <form className="formSearch" onSubmit={handleSubmit}>
-                <input onChange={handleChange} type='text' value={keyword}/>
+                <span className="p-input-icon-left">
+                    <i className="pi pi-search" />
+                    <InputText value={keyword} onChange={handleChange} placeholder="Search Gifs" />
+                </span>
             </form>
     )
 }

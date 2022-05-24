@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import useUser from "../hooks/useUser";
 
+import { InputText } from 'primereact/inputtext';
+import { Password } from 'primereact/password';
+
 export default function Login (){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -21,15 +24,11 @@ export default function Login (){
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                placeholder="username"
-                onChange={(e) => setUsername(e.target.value)}
-                value={username}/>
-            <input
-                type='password'
-                placeholder="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}/>
+            <span className="p-float-label">
+                    <InputText id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <label htmlFor="username">Username</label>
+                </span>
+                <Password value={password} onChange={(e) => setPassword(e.target.value)} toggleMask />
             <button>Login</button>
         </form>
     )
